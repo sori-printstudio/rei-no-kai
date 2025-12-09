@@ -1,0 +1,238 @@
+/*css for pop up; image layout, text styling, about page etc*/
+
+body{
+    padding: 0.8vw;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.about{
+    font-family: "darkmode-mono-off", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.6rem;
+    display: flex;
+    position: fixed; /*remove this if you want to enable scroll*/
+}
+
+.about a{
+    color: black;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.about a:hover{
+    font-style: italic;
+}
+
+.column1{
+    margin: 0.5rem;
+    width: 42%;
+}
+
+.column1 img{
+    width: 98%;
+}
+
+.caption{
+    padding-top: 0.5rem;
+    font-size: 0.6rem;
+}
+
+.column2{
+    margin: 0.5rem;
+    width: 25%;
+}
+
+.column3{
+    margin: 0.5rem;
+    width: 25%;
+}
+
+.information{
+    bottom: 1rem;
+    position: fixed;
+}
+
+.title{
+    font-weight: 800;
+    display: inline;
+}
+
+.leftside{
+    width: 60vw;
+    top: 0;
+}
+
+.rightside{
+    width: 12vw;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.title {
+    font-family: "darkmode-mono-off", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 0.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-family: "darkmode-mono-off", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.slider {
+    width: 97%;
+    float: right;
+    position: relative;
+}
+
+.slider img {
+    height: 56.5vw;
+    padding-left: 0.5rem;
+    position: absolute;
+    opacity: 0;
+    z-index: 0;
+}
+
+.slider img:first-child {
+    opacity: 1;
+    z-index: 1;
+}
+
+.navigation-button {
+    float: left;
+    position: relative;
+}
+
+.dot {
+    cursor: pointer;
+    color: #bbb;
+    display: inline-block;
+}
+
+.active,
+.dot:hover {
+    color: #717171;
+}
+
+.volume1{
+    font-family: "darkmode-mono-off", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 0.6rem;
+    background: #44D62C;
+    color: #000000;
+    border-radius: 10rem;
+    padding: 0.3rem;
+    padding-left: 0.33rem;
+    padding-right: 0.33rem;
+    display: inline-block;
+    margin-top: 0.3rem;
+}
+
+.volume2{
+    font-family: "darkmode-mono-off", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 0.6rem;
+    background: #FF6C2F;
+    color: #000000;
+    border-radius: 10rem;
+    padding: 0.3rem;
+    padding-left: 0.33rem;
+    padding-right: 0.33rem;
+    display: inline-block;
+    margin-top: 0.3rem;
+}
+
+@media only screen and (max-width: 650px) {
+    .about{
+        display: contents;
+    }
+
+    .column1{
+        width: 93%;
+    }
+
+    .column1 img{
+        width: 100%;
+    }
+
+    .column2{
+        width: 93%;
+    }
+
+    .column3{
+        width: 93%;
+    }
+
+    .information{
+        bottom: -1rem;
+        position: relative;
+        margin-bottom: 1rem;
+    }
+    
+    .leftside{
+        width: 95vw;
+        align-content: center;
+    }
+
+    .rightside{
+        width: 50%;
+        padding-top: 0.5rem;
+        top: 0;
+        left: 0.75rem;
+        position: absolute;
+    }
+
+    .title {
+        font-size: 0.5rem;
+    }
+
+    .slider {
+        float: left;
+        top: 7rem;
+        position: relative;
+    }
+    
+    .slider img {
+        width: 95vw;
+        height: auto;
+        padding-left: 0;
+        position: absolute;
+        opacity: 0;
+    }
+
+    .navigation-button {
+        float: none;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0.5rem;
+        top: 7.5rem;
+    }
+
+    .dot {
+        cursor: pointer;
+        z-index:999999;
+        color: #bbb;
+        display: inline-block;
+        margin: 0.15rem;
+    }
+
+    .active,
+    .dot:hover {
+        color: #717171;
+    }
+
+}
