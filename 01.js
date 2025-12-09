@@ -550,7 +550,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var currentImg = 0;
   var imgs = document.querySelectorAll('.slider img');
   let dots = document.querySelectorAll('.dot');
-  var interval = 5000;
+  var interval = 3000;
 
   var timer = setInterval(changeSlide, interval);
 
