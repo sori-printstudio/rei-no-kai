@@ -157,7 +157,7 @@ body{
 
 
 @media only screen and (max-width: 850px) {
-    .images {
+    .imagegallery {
         grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
     }
 

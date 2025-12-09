@@ -183,7 +183,7 @@ body{
     }
     
     .leftside{
-        width: 95vw;
+        width: 94vw;
         align-content: center;
     }
 
@@ -201,12 +201,12 @@ body{
 
     .slider {
         float: left;
-        top: 7rem;
+        top: 6.5rem;
         position: relative;
     }
     
     .slider img {
-        width: 95vw;
+        width: 94vw;
         height: auto;
         padding-left: 0;
         position: absolute;
@@ -218,16 +218,18 @@ body{
         position: relative;
         display: flex;
         flex-direction: row;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
         top: 7.5rem;
     }
 
     .dot {
         cursor: pointer;
-        z-index:999999;
+        z-index: 999999;
         color: #bbb;
         display: inline-block;
-        margin: 0.15rem;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        margin-left: 1vh;
     }
 
     .active,

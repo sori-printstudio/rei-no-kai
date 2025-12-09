@@ -240,7 +240,7 @@ input:checked{
 
 .svg{
     position: fixed;
-    top: 0rem;
+    top: 1vh;
     width: 90vw;
     left: -3rem;
     fill: #ffffff;
@@ -295,7 +295,9 @@ svg circle.on {
 }
 
 @media only screen and (max-width: 850px) {
-    body{
+    html, body {
+        max-width: 100%;
+        overflow: hidden;
         padding: 0;
         margin: 0;
     }
@@ -314,28 +316,46 @@ svg circle.on {
         right: 87vw;
     }
 
-   #sidepanelBackground {
-        position: fixed;
-        height: 100vh;
-        background-color: rgba(255, 255, 255, 0.7);
-        width: 0;
-        z-index: 1;
-        right: 60rem;
-        transition: 0.45s;
-        padding-left: 1rem;
+    .navigation{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80vw;
+      max-width: 320px;
+      height: 100vh;
+
+      transform: translateX(-100%);
+      transition: transform 0.35s ease;
+
+      overflow-y: auto;
+      z-index: 3;
+      padding: 1rem;
+      padding-top: 4rem;
+  }
+
+    .navigation.open{
+        transform: translateX(0);
     }
 
-    .navigation{
-        width: 0;
-        z-index: 1;
-        right: 60rem;
-        top: 4rem;
-        transition: 0.45s;
-        padding-left: 1rem;
+    #sidepanelBackground{
+        position: fixed;
+        inset: 0;
+        background-color: rgba(255,255,255,0.7);
+
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.35s ease;
+
+        z-index: 2;
+    }
+
+    #sidepanelBackground.open{
+        opacity: 1;
+        pointer-events: auto;
     }
 
     #openbtn {
-        display: inline-flex;
+        display: inline;
         align-items: center;
         justify-content: center;
         width: 2.6rem;
@@ -352,25 +372,9 @@ svg circle.on {
         font-weight: 400;
         font-style: normal;
         text-align: center;
-    }
     
-    #openbtn:hover{
-        color: lightgrey;
-        cursor: pointer;
-    }
-
-    .navigation.open{
-        transform: translate(0, 0);
-        right: -3.1rem;
-        width: 100%;
-        padding-right: 2rem;
-    }
-
-    #sidepanelBackground.open{
-        transform: translate(0, 0);
-        right: 0rem;
-        width: 100%;
-        padding-right: 2rem;
+        z-index: 100000;
+        pointer-events: auto;
     }
 
     .filter-controls {
@@ -379,20 +383,23 @@ svg circle.on {
 
     .yearrange {
         width: 50%;
+        top: 5.5rem;
     }
 
     .svg{
-        position: fixed;
+        position: relative;
         width: 140vw;
-        top: -1rem;
+        top: -10vh;
         left: -5vw;
         fill: #ffffff;
         stroke: #000000;
+
     }
 
     .banner{
         width: 100vw;
         justify-content: space-between;
+        z-index: 100;
     }
 
     .infopage{
