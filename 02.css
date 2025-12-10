@@ -194,7 +194,7 @@ body{
     }
 
     .popup {
-        display: flex;  
+        display: none;  /* Hide by default on mobile */
         align-items: stretch;
         justify-content: stretch;
     }

@@ -395,6 +395,16 @@ svg circle.on {
         stroke: #000000;
     }
 
+    svg path.hover,
+    svg circle.hover {
+        fill: none !important;
+        cursor: pointer; /* still show pointer */
+    }
+
+    svg path, svg circle {
+        pointer-events: all;
+    }
+
     .banner{
         width: 100vw;
         justify-content: space-between;
