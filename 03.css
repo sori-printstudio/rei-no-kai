@@ -183,7 +183,7 @@ body{
     .leftside { /* second */
         order: 1; 
         width: 94vw;
-        padding-bottom: 10%;
+        padding-bottom: 20%; /* AANGEPASTA */
     }
 
     .slider {

@@ -3,6 +3,7 @@
 body{
     padding: 1.5vh;
     cursor: auto;
+    overflow: hidden; /* AANGEPASTA */
 }
 
 ::-webkit-scrollbar {
@@ -336,7 +337,7 @@ svg circle.on {
     .navigation > div:last-child {
         margin-bottom: 8rem; /* push content above banner */
     }
-    
+
     .navigation.open{
         transform: translateX(0);
     }
