@@ -169,8 +169,6 @@ body{
 
     body > .leftside,
     body > .rightside {
-        overflow-y: auto;
-        overflow-x: hidden;
         display: block;
         width: 100%;
     }

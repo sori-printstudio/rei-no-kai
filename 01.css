@@ -322,7 +322,7 @@ svg circle.on {
       left: 0;
       width: 80vw;
       max-width: 320px;
-      height: 100vh;
+      height: 100%;
 
       transform: translateX(-100%);
       transition: transform 0.35s ease;
@@ -331,8 +331,12 @@ svg circle.on {
       z-index: 3;
       padding: 1rem;
       padding-top: 4rem;
-  }
+    }
 
+    .navigation > div:last-child {
+        margin-bottom: 8rem; /* push content above banner */
+    }
+    
     .navigation.open{
         transform: translateX(0);
     }
@@ -395,10 +399,9 @@ svg circle.on {
         stroke: #000000;
     }
 
-    svg path.hover,
-    svg circle.hover {
-        fill: none !important;
-        cursor: pointer; /* still show pointer */
+    svg path.on,
+    svg circle.on {
+        fill: lightgrey; /* ensure this applies */
     }
 
     svg path, svg circle {

@@ -190,15 +190,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Click map -> toggle prefecture checkbox
   svgPrefectures.forEach(function(el) {
-    el.style.cursor = 'pointer';
-    el.addEventListener('click', function() {
-      var prefId = (el.id || '').trim();
-      if (!prefId) return;
-      var input = document.querySelector('.filter-controls input[data-state="' + prefId + '"]');
-      if (!input) return;
-      input.checked = !input.checked;
-      input.dispatchEvent(new Event('change', { bubbles: true }));
-    });
+  el.style.cursor = 'pointer';
+
+  // Handle click/tap to toggle checkbox and .on class
+  el.addEventListener('click', function() {
+    var prefId = el.id.trim();
+    if (!prefId) return;
+
+    var input = document.querySelector('.filter-controls input[data-state="' + prefId + '"]');
+    if (!input) return;
+
+    // Toggle checkbox
+    input.checked = !input.checked;
+    input.dispatchEvent(new Event('change', { bubbles: true }));
+
+    // Toggle .on class directly on click
+    if (input.checked) {
+      el.classList.add('on');
+      var label = findLabelByPrefecture(prefId);
+      if (label) label.classList.add('on');
+    } else {
+      el.classList.remove('on');
+      var label = findLabelByPrefecture(prefId);
+      if (label) label.classList.remove('on');
+    }
+  });
+
+  // Only add hover effect for desktop
+  if (!('ontouchstart' in window)) {
     el.addEventListener('mouseenter', function() {
       var id = el.id;
       var input = document.querySelector('.filter-controls input[data-state="' + id + '"]');
@@ -215,7 +234,8 @@ document.addEventListener("DOMContentLoaded", function() {
       var label = findLabelByPrefecture(id);
       if (label) label.classList.remove('hover');
     });
-  });
+  }
+});
 
   // Hover prefecture OR region label -> svg (only when unchecked)
   labelPrefectures.forEach(function(label) {
