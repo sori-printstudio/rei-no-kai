@@ -23,6 +23,20 @@ body{
     display: inline;
 }
 
+#homepagebtn{
+    font-family: "darkmode-mono-off", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 0.6rem;
+    color:#000000;
+    text-decoration: none;
+}
+
+#homepagebtn:hover{
+    color: #808080;
+    cursor: pointer;
+}
+
 .navigation{
     width: 22.4vw;
     position: absolute;

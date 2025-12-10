@@ -333,8 +333,8 @@ svg circle.on {
       padding-top: 4rem;
     }
 
-    .navigation > div:last-child {
-        margin-bottom: 50rem;  /* AANGEPASTA */
+    .navigation > div:last-of-type { /* AANGEPASTA */
+        margin-bottom: 8rem;
     }
 
     .navigation.open{

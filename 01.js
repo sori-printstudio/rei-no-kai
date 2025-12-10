@@ -413,6 +413,30 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
+  // Homepage button
+  var homepageBtn = document.getElementById("homepagebtn");
+  if (homepageBtn) {
+    homepageBtn.addEventListener("click", function() {
+      checkboxPrefectures.forEach(function(cb) {
+        cb.checked = false;
+        cb.dispatchEvent(new Event('change', { bubbles: true }));
+      })
+
+      // Clear UnknownYear checkbox
+      const unknownCb = document.querySelector('input[name="UnknownYear"]');
+      if (unknownCb) unknownCb.checked = false;
+
+      svgPrefectures.forEach(svg => svg.classList.remove('on'));
+      labelPrefectures.forEach(label => label.classList.remove('on'));
+      sessionStorage.removeItem('selectedRegions');
+      sessionStorage.removeItem('selectedPrefectures');
+      sessionStorage.removeItem('selectedArchitects');
+      sessionStorage.removeItem('selectedFilters');
+
+      images.forEach(img => img.style.display = '');
+    });
+  }
+
 
   // Save selection before navigation and apply selection on images page
   if (filterBtn) {
