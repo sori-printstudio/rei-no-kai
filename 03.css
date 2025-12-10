@@ -176,14 +176,14 @@ body{
     .rightside { /* first */
         order: 0; 
         position: static;
-        width: 50vw; /* AANGEPASTA */
+        /*width: 50vw; */  /* AANGEPASTA */
         margin-top: 0.5rem;
     }
 
     .leftside { /* second */
         order: 1; 
-        width: 50vw; /* AANGEPASTA */
-        padding-bottom: 20%; /* AANGEPASTA */
+        /* width: 50vw; */  /* AANGEPASTA */
+        padding-bottom: 20%;
     }
 
     .slider {
@@ -196,16 +196,14 @@ body{
         height: auto;
         padding-left: 0;
         padding-bottom: 0.3rem;
-
-        /* key changes */
-        position: static;   /* stop absolute stacking */
-        opacity: 1;         /* show all images */
+        position: static;
+        opacity: 1;
         display: block;
         margin-bottom: 2vw;
     }
 
     .navigation-button {
-        display: none; /* no dots needed on mobile */
+        display: none;
     }
 
     .about{

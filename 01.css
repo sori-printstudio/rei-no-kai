@@ -3,7 +3,7 @@
 body{
     padding: 1.5vh;
     cursor: auto;
-    overflow: hidden; /* AANGEPASTA */
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -19,7 +19,6 @@ body{
     z-index: 999;
     font-size: 6rem;
     line-height: 6rem;
-    /*bottom: 71%;*/
     top: 2rem;
     left: 2rem;
     padding-bottom: 1rem;
@@ -335,7 +334,7 @@ svg circle.on {
     }
 
     .navigation > div:last-child {
-        margin-bottom: 8rem; /* push content above banner */
+        margin-bottom: 50rem;  /* AANGEPASTA */
     }
 
     .navigation.open{
@@ -394,6 +393,7 @@ svg circle.on {
     .svg{
         position: relative;
         width: 140vw;
+        overflow: hidden;  /* AANGEPASTA */
         top: -10vh;
         left: -5vw;
         fill: #ffffff;

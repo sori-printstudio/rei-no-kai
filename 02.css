@@ -195,7 +195,7 @@ body{
     }
 
     .popup {
-        display: none;  /* Hide by default on mobile */
+        display: none;
         align-items: stretch;
         justify-content: stretch;
     }
@@ -209,7 +209,6 @@ body{
         border: none;
         border-radius: 0;
         padding: 0;
-        overflow: hidden; /* AANGEPASTA */
     }
 
     .iframe {
