@@ -162,7 +162,6 @@ body{
     }
 
     .image {
-
         padding: 1vw;
     }
 
@@ -194,9 +193,32 @@ body{
         right: 3vw;
     }
 
-    .iframe{
-        width: 80vw;
-        height: 81vh;
+    .popup {
+        display: flex;  
+        align-items: stretch;
+        justify-content: stretch;
+    }
+
+    .popup-content {
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
+
         border: none;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .iframe {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .close {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 100000;
     }
 }

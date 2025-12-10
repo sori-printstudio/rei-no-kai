@@ -547,10 +547,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Slideshow
 document.addEventListener('DOMContentLoaded', function() {
+  // skip slideshow on mobile
+  if (window.matchMedia("(max-width: 650px)").matches) {
+    return;
+  }
+  
   var currentImg = 0;
   var imgs = document.querySelectorAll('.slider img');
   let dots = document.querySelectorAll('.dot');
-  var interval = 3000;
+  var interval = 5000;
 
   var timer = setInterval(changeSlide, interval);
 
@@ -574,3 +579,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.changeSlide = changeSlide;
 });
+
+
+

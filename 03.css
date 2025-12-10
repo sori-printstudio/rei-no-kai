@@ -28,6 +28,13 @@ body{
     font-style: italic;
 }
 
+.abouttitle{
+    display: inline;
+    font-weight: 800;
+    font-family: "darkmode-mono-off", sans-serif;
+    font-style: normal;
+}
+
 .column1{
     margin: 0.5rem;
     width: 42%;
@@ -57,10 +64,6 @@ body{
     position: fixed;
 }
 
-.title{
-    font-weight: 800;
-    display: inline;
-}
 
 .leftside{
     width: 60vw;
@@ -76,7 +79,8 @@ body{
     position: absolute;
 }
 
-.title {
+.title{
+    display: block;
     font-family: "darkmode-mono-off", sans-serif;
     font-weight: 800;
     font-style: normal;
@@ -156,24 +160,81 @@ body{
 }
 
 @media only screen and (max-width: 650px) {
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body > .leftside,
+    body > .rightside {
+        display: block;
+        width: 100%;
+    }
+
+    .rightside { /* first */
+        order: 0; 
+        position: static;
+        width: 94vw;
+        margin-top: 0.5rem;
+    }
+
+    .leftside { /* second */
+        order: 1; 
+        width: 94vw;
+        padding-bottom: 10%;
+    }
+
+    .slider {
+        float: left;
+        position: relative;
+    }
+
+    .slider img {
+        width: 93vw;
+        height: auto;
+        padding-left: 0;
+        padding-bottom: 0.3rem;
+
+        /* key changes */
+        position: static;   /* stop absolute stacking */
+        opacity: 1;         /* show all images */
+        display: block;
+        margin-bottom: 2vw;
+    }
+
+    .navigation-button {
+        display: none; /* no dots needed on mobile */
+    }
+
     .about{
         display: contents;
     }
 
     .column1{
-        width: 93%;
+        width: 94vw;
+        margin: 0;
+        margin-bottom: 1rem;
     }
 
     .column1 img{
         width: 100%;
     }
 
+    .caption{
+        margin-left: 0.2rem;
+    }
+
     .column2{
         width: 93%;
+        margin-left: 0.2rem;
     }
 
     .column3{
         width: 93%;
+        margin-left: 0.2rem;
+        padding-bottom: 10%;
     }
 
     .information{
@@ -181,60 +242,9 @@ body{
         position: relative;
         margin-bottom: 1rem;
     }
-    
-    .leftside{
-        width: 94vw;
-        align-content: center;
-    }
-
-    .rightside{
-        width: 50%;
-        padding-top: 0.5rem;
-        top: 0;
-        left: 0.75rem;
-        position: absolute;
-    }
 
     .title {
-        font-size: 0.5rem;
-    }
-
-    .slider {
-        float: left;
-        top: 6.5rem;
-        position: relative;
-    }
-    
-    .slider img {
-        width: 94vw;
-        height: auto;
-        padding-left: 0;
-        position: absolute;
-        opacity: 0;
-    }
-
-    .navigation-button {
-        float: none;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 1vh;
-        top: 7.5rem;
-    }
-
-    .dot {
-        cursor: pointer;
-        z-index: 999999;
-        color: #bbb;
-        display: inline-block;
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-        margin-left: 1vh;
-    }
-
-    .active,
-    .dot:hover {
-        color: #717171;
+        font-size: 0.6rem;
     }
 
 }

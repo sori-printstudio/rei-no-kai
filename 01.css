@@ -245,7 +245,7 @@ input:checked{
     left: -3rem;
     fill: #ffffff;
     stroke: black;
-    z-index: -1;
+    z-index: 1;
 }
 
 svg path.hover,
@@ -382,7 +382,7 @@ svg circle.on {
     }
 
     .yearrange {
-        width: 50%;
+        width: 80%;
         top: 5.5rem;
     }
 
@@ -393,7 +393,6 @@ svg circle.on {
         left: -5vw;
         fill: #ffffff;
         stroke: #000000;
-
     }
 
     .banner{
