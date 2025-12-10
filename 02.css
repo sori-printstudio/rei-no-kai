@@ -201,10 +201,10 @@ body{
     }
 
     .popup-content {
-        width: 50vw; /* AANGEPASTA */
-        height: 50vh; /* AANGEPASTA */
-        max-width: 50vw; /* AANGEPASTA */
-        max-height: 50vh; /* AANGEPASTA */
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
 
         border: none;
         border-radius: 0;
