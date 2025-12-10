@@ -331,10 +331,11 @@ svg circle.on {
       z-index: 3;
       padding: 1rem;
       padding-top: 4rem;
+      padding-bottom: 8rem; /* AANGEPASTA */
     }
 
     .navigation > div:last-of-type { /* AANGEPASTA */
-        padding-bottom: 8rem; /* AANGEPASTA */
+        margin-bottom: 8rem; /* AANGEPASTA */
     }
 
     .navigation.open{

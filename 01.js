@@ -413,30 +413,37 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-   // Homepage button
+  // Homepage button
   var homepageBtn = document.getElementById("homepagebtn");
   if (homepageBtn) {
-    homepageBtn.addEventListener("click", function() {
-      checkboxPrefectures.forEach(function(cb) {
+    homepageBtn.addEventListener("click", function(e) {
+      e.preventDefault(); // stop default navigation
+
+      // Clear checkboxes
+      checkboxPrefectures.forEach(cb => {
         cb.checked = false;
         cb.dispatchEvent(new Event('change', { bubbles: true }));
-      })
+      });
 
-      // Clear UnknownYear checkbox
       const unknownCb = document.querySelector('input[name="UnknownYear"]');
       if (unknownCb) unknownCb.checked = false;
 
       svgPrefectures.forEach(svg => svg.classList.remove('on'));
       labelPrefectures.forEach(label => label.classList.remove('on'));
+
+      // Clear session storage filters
       sessionStorage.removeItem('selectedRegions');
       sessionStorage.removeItem('selectedPrefectures');
       sessionStorage.removeItem('selectedArchitects');
       sessionStorage.removeItem('selectedFilters');
 
+      // Reset images
       images.forEach(img => img.style.display = '');
+
+      // Force navigation to homepage
+      window.location.href = homepageBtn.href;
     });
   }
-
 
   // Save selection before navigation and apply selection on images page
   if (filterBtn) {
