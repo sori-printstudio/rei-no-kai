@@ -170,7 +170,7 @@ body{
     body > .leftside,
     body > .rightside {
         display: block;
-        width: 100%;
+        width: 50%; /* AANGEPASTA */
     }
 
     .rightside { /* first */
