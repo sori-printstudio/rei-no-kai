@@ -191,9 +191,6 @@ document.addEventListener("DOMContentLoaded", function() {
   // Click map -> toggle prefecture checkbox
   svgPrefectures.forEach(function(el) {
     el.style.cursor = 'pointer';
-
-  el.addEventListener('click', togglePrefecture);
-  el.addEventListener('pointerdown', togglePrefecture);
     el.addEventListener('click', function() {
       var prefId = (el.id || '').trim();
       if (!prefId) return;
@@ -518,25 +515,20 @@ document.addEventListener("DOMContentLoaded", function() {
   const about = document.querySelectorAll('.about');
 
   thumbs.forEach(img => {
-    img.addEventListener('click', (e) => {
-      const link = img.dataset.url; 
-      if (!link) return;
-      e.preventDefault();
+    img.addEventListener('click', () => {
+      const link = img.dataset.url; // get URL from data-url
       iframe.src = link;
       popup.style.display = 'flex';
     });
   });
 
   about.forEach(img => {
-    img.addEventListener('click', (e) => {
-      const link = img.dataset.url; 
-      if (!link) return;
-      e.preventDefault();
+    img.addEventListener('click', () => {
+      const link = img.dataset.url; // get URL from data-url
       iframe.src = link;
       popup.style.display = 'flex';
     });
   });
-
 
   // Close popup
   closeBtn.addEventListener('click', () => {
@@ -559,7 +551,6 @@ document.addEventListener('DOMContentLoaded', function() {
   if (window.matchMedia("(max-width: 650px)").matches) {
     return;
   }
-
   var currentImg = 0;
   var imgs = document.querySelectorAll('.slider img');
   let dots = document.querySelectorAll('.dot');
