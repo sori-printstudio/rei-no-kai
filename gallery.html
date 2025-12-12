@@ -14,13 +14,13 @@
         <title>rei-no-kai</title>
         <link rel="icon" href="favicon.png" type="image/x-icon">
     </head>
-    <body>
-        <a href="index.html"  id="homepagebtn">
+    <body loading="lazy"> <!-- aangepasta LAZY LOADING -->
+        <a href="index"  id="homepagebtn">
             <div class="title">
                 REI
                 <div class="japanese"> れい</div>
             </div>
-         </a> <!-- aangepasta -->
+         </a>
 
         <div class="banner">
             <div class="infopage">
@@ -37,19 +37,26 @@
             </div>
         </div>
 
-        <div class="imagegallery">
-<!--ALWAYS change the lowercase .jpg to .jpg-->
+        <div id="noFiltersSelected">
+            No filters selected, try again.
+        </div>
 
-<!-- EMPTY TEMPLATE
-<div class="image" loading="lazy" data-category="JPXX ArchitectAchternaam" data-url="Naamgebouw.html">
-                <img src="">
-                <div class="caption">
-                    <div class="caption-title">Name of Building</div>
-                    Architect
-                    <br>Year, City, Prefecture
-                </div>
+        <div id="noResultsMessage">
+            Oops, no architecture to see here... yet.
+        </div>
+
+        <div class="imagegallery">
+
+        <!-- EMPTY TEMPLATE
+        <div class="image" loading="lazy" data-category="JPXX ArchitectAchternaam" data-url="Naamgebouw.html">
+            <img src="">
+            <div class="caption">
+                <div class="caption-title">Name of Building</div>
+                Architect
+                <br>Year, City, Prefecture
             </div>
--->
+        </div>
+        -->
 
         <!--JP01 Hokkaido-->
             <!--Memorial Tower of the Hokkaido Centennial-->
@@ -61,9 +68,7 @@
                     <br>1970, Sapporo, Hokkaido
                 </div>
             </div>
-            
         <!--JP02 Aomori-->
-
         <!--JP03 Iwate-->
             <!--Iwate Prefectural Gymnasium-->
             <div class="image" loading="lazy" data-category="JP03 YoshioKobayashiLaboratory 1968" data-url="IwatePrefecturalGymnasium.html">
@@ -83,15 +88,10 @@
                     <br>1965, Ichinoseki, Iwate
                 </div>
             </div>
-
         <!--JP04 Miyagi-->
-
         <!--JP05 Akita-->
-
         <!--JP06 Yamagata-->
-
         <!--JP07 Fukushima-->
-
         <!--JP08 Ibaraki-->
             <!--Art Tower Mito-->
             <div class="image" loading="lazy" data-category="JP08 ArataIsozaki 1990" data-url="ArtTowerMito.html">
@@ -156,7 +156,6 @@
                     <br>1976, Tsukuba, Ibaraki
                 </div>
             </div>
-
         <!--JP09 Tochigi-->
             <!--Imaichi Civic Culture Center-->
             <div class="image" loading="lazy" data-category="JP09 ItsuoKamiya 1977" data-url="ImaichiCivicCultureCenter.html">
@@ -194,7 +193,6 @@
                     <br>1979, Sano, Tochigi
                 </div>
             </div>
-            
         <!--JP10 Gunma-->
             <!--Futuro House-->
             <div class="image" loading="lazy" data-category="JP10 MattiSuuronen 1968" data-url="FuturoHouse.html">
@@ -223,7 +221,6 @@
                     <br>1974, Takasaki, Gunma
                 </div>
             </div>
-
         <!--JP11 Saitama-->
             <!--Miyashiro Municipal Community Center-->
             <div class="image" loading="lazy" data-category="JP11 TeamZOO 1980" data-url="MiyashiroMunicipalCommunityCenter.html">
@@ -243,7 +240,6 @@
                     <br>1973, Tokorozawa, Saitama
                 </div>
             </div>
-
         <!--JP12 Chiba-->
             <!--Chiba Prefectural Central Library-->
             <div class="image" loading="lazy" data-category="JP12 MasatoOtaka 1968" data-url="ChibaPrefecturalCentralLibrary.html">
@@ -281,7 +277,6 @@
                     <br>1971, Sakura, Chiba
                 </div>
             </div>
-
         <!--JP13 Tokyo-->
             <!--Tokyo Budokan-->
             <div class="image" loading="lazy" data-category="JP13 KijoRokkaku 1989" data-url="TokyoBudokan.html">
@@ -670,7 +665,6 @@
                     <br>1965, Hachioji, Tokyo
                 </div>
             </div>       
-            
         <!--JP14 Kanagawa-->
             <!--Sakuradai Court Village-->
             <div class="image" loading="lazy" data-category="JP14 ShozoUchii 1970" data-url="SakuradaiCourtVillage.html">
@@ -735,7 +729,6 @@
                     <br>1978, Hakone, Kanagawa
                 </div>
             </div>
-        
         <!--JP15 Niigata-->
             <!--Tanimura Art Museum-->
             <div class="image" loading="lazy" data-category="JP15 TogoMurano 1983" data-url="TanimuraArtMuseum.html">
@@ -746,9 +739,7 @@
                     <br>1983, Itoigawa, Niigata
                 </div>
             </div>
-
         <!--JP16 Toyama-->
-
         <!--JP17 Ishikawa-->
             <!--Fukui Fastener Co., Ltd. Kaga Factory-->
             <div class="image" loading="lazy" data-category="JP17 Unknown UnknownYear" data-url="FukuiFastenerCoLtdKagaFactory.html">
@@ -786,7 +777,6 @@
                     <br>1991, Kanazawa, Ishikawa
                 </div>
             </div>
-
         <!--JP18 Fukui-->
             <!--Fukui Sun Dome-->
             <div class="image" loading="lazy" data-category="JP18 ShigeyukiOkazaki 1995" data-url="FukuiSunDome.html">
@@ -797,7 +787,6 @@
                     <br>1995, Sabae, Fukui
                 </div>
             </div>
-
         <!--JP19 Yamanashi-->
             <!--Yamanashi Communication Center-->
             <div class="image" loading="lazy" data-category="JP19 KenzoTange 1966" data-url="YamanashiCommunicationCenter.html">
@@ -808,11 +797,8 @@
                     <br>1966, Kofu, Yamanashi
                 </div>
             </div>
-
         <!--JP20 Nagano-->
-
         <!--JP21 Gifu-->
-
         <!--JP22 Shizuoka-->
             <!--Shizuoka Press and Broadcasting Center 2-->
             <div class="image" loading="lazy" data-category="JP22 KenzoTange 1970" data-url="ShizuokaPressAndBroadcastingCenter2.html">
@@ -831,8 +817,7 @@
                     -
                     <br>-, Shizuoka, Shizuoka
                 </div>
-            </div>
-            
+            </div>  
         <!--JP23 Aichi-->
             <!--Kozakai Station-->
             <div class="image" loading="lazy" data-category="JP23 Unknown 2002" data-url="KozakaiStation.html">
@@ -887,10 +872,8 @@
                     -
                     <br>-, Nagoya, Aichi
                 </div>
-            </div>
-            
+            </div> 
         <!--JP24 Mie-->
-
         <!--JP25 Shiga-->
             <!--Kibougaoka Youth Castle-->
             <div class="image" loading="lazy" data-category="JP25 UrbanScienceLaboratory 1972" data-url="KibougaokaYouthCastle.html">
@@ -901,7 +884,6 @@
                     <br>1972, Ryuo, Shiga
                 </div>
             </div>
-
         <!--JP26 Kyoto-->
             <!--Kyoto International Conference Hall-->
             <div class="image" loading="lazy" data-category="JP26 SachioOtani 1966" data-url="KyotoInternationalConferenceHall.html">
@@ -957,7 +939,6 @@
                     <br>1983, Kyoto, Kyoto
                 </div>
             </div>
-
         <!--JP27 Osaka-->
             <!--National Museum of Ethnology-->
             <div class="image" loading="lazy" data-category="JP27 KishoKurokawa 1977" data-url="NationalMuseumOfEthnology.html">
@@ -1049,7 +1030,6 @@
                     <br>1975, Misaki, Osaka
                 </div>
             </div>
-
         <!--JP28 Hyogo-->
             <!--Takarazuka Catholic Church-->
             <div class="image" loading="lazy" data-category="JP28 MuranoMoriArchitects 1967" data-url="TakarazukaCatholicChurch.html">
@@ -1096,11 +1076,8 @@
                     <br>2003, Kobe, Hyogo
                 </div>
             </div>
-
         <!--JP29 Nara-->
-
         <!--JP30 Wakayama-->
-
         <!--JP31 Tottori-->
             <!--Yonago Public Hall-->
             <div class="image" loading="lazy" data-category="JP31 MuranoMoriArchitects 1958" data-url="YonagoPublicHall.html">
@@ -1138,7 +1115,6 @@
                     <br>1997, Sakaiminato, Tottori
                 </div>
             </div>
-
         <!--JP32 Shimane-->
             <!--Meteor Plaza-->
             <div class="image" loading="lazy" data-category="JP32 ShinTakamatsu 1995" data-url="MeteorPlaza.html">
@@ -1194,7 +1170,6 @@
                     <br>1990, Oda, Shimane
                 </div>
             </div>
-
         <!--JP33 Okayama-->
             <!--Tsuyama Culture Center-->
             <div class="image" loading="lazy" data-category="JP33 KoshiKawashima 1966" data-url="TsuyamaCultureCenter.html">
@@ -1205,9 +1180,7 @@
                     <br>1966, Tsuyama, Okayama
                 </div>
             </div>
-
         <!--JP34 Hiroshima-->
-            
         <!--JP35 Yamaguchi-->
             <!--Yamaguchi Civic Center-->
             <div class="image" loading="lazy" data-category="JP35 NikkenSekkei 1971" data-url="YamaguchiCivicCenter.html">
@@ -1236,9 +1209,7 @@
                     <br>1998, Hofu, Yamaguchi
                 </div>
             </div>
-
-        <!--JP36 Tokushima-->
-            
+        <!--JP36 Tokushima-->  
         <!--JP37 Kagawa-->
             <!--Kagawa Prefectural Gymnasium-->
             <div class="image" loading="lazy" data-category="JP37 KenzoTange 1964" data-url="KagawaPrefecturalGymnasium.html">
@@ -1249,11 +1220,8 @@
                     <br>1964, Takamatsu, Kagawa
                 </div>
             </div>
-
         <!--JP38 Ehime-->
-
         <!--JP39 Kochi-->
-
         <!--JP40 Fukuoka-->
             <!--Kitakyushu International Conference Center-->
             <div class="image" loading="lazy" data-category="JP40 ArataIsozaki 1990" data-url="KitakyushuInternationalConferenceCenter.html">
@@ -1696,7 +1664,6 @@
                     <br>2022, Chikugo, Fukuoka
                 </div>
             </div>
-
         <!--JP41 Saga-->
             <!--Kyushu Ryukoku Junior College-->
             <div class="image" loading="lazy" data-category="JP41 Unknown 1984" data-url="KyushuRyukokuJuniorCollege.html">
@@ -1743,7 +1710,6 @@
                     <br>1999, Takeo, Saga
                 </div>
             </div>
-            
         <!--JP42 Nagasaki-->
             <!--Kuhon-ji Buddhist Temple-->
             <div class="image" loading="lazy" data-category="JP42 TetsuoFuruichi 2003" data-url="Kuhon-jiBuddhistTemple.html">
@@ -1826,7 +1792,6 @@
                     <br>2004, Nagasaki, Nagasaki
                 </div>
             </div>
-
         <!--JP43 Kumamoto-->
             <!--Tamana Observatory-->
             <div class="image" loading="lazy" data-category="JP43 TakasakiMasaharu 1992" data-url="TamanaObservatory.html">
@@ -2053,8 +2018,6 @@
                     <br>1992, Aso, Kumamoto
                 </div>
             </div>
-
-
         <!--JP44 Oita-->
             <!--Hikari Terrace-->
             <div class="image" loading="lazy" data-category="JP44 NKS2Architects 2014" data-url="HikariTerrace.html">
@@ -2137,7 +2100,6 @@
                     <br>2004, Taketa, Oita
                 </div>
             </div>
-
         <!--JP45 Miyazaki-->
                 <!--Miyazaki Prefectural Library-->
                 <div class="image" loading="lazy" data-category="JP45 YasuiArchitectsandEngineers 1987" data-url="MiyazakiPrefecturalLibrary.html">
@@ -2220,7 +2182,6 @@
                     <br>1966, Miyakonojo, Miyazaki
                 </div>
             </div>
-
         <!--JP46 Kagoshima-->
             <!--Kihoku Astronomical Observatory-->
             <div class="image" loading="lazy" data-category="JP46 TakasakiMasaharu 1995" data-url="KihokuAstronomicalObservatory.html">
@@ -2303,7 +2264,6 @@
                     <br>1978, Ibusuki, Kagoshima
                 </div>
             </div>
-
         <!--JP47 Okinawa-->
         </div>
     </body>

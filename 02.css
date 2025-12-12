@@ -170,6 +170,20 @@ body{
     border: none;
 }
 
+#noResultsMessage,
+#noFiltersSelected{
+    display: none;
+    text-align: center;
+    font-family: "darkmode-mono-off", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    position: relative;
+    top: 38vh;
+    left: 0;
+    width: 94.8%;
+    padding: 2rem;
+}
 
 @media only screen and (max-width: 850px) {
     .imagegallery {
@@ -187,14 +201,14 @@ body{
     .title{
         font-size: 0.6rem;
         line-height: 0rem;
-        bottom: 0.57rem;
+        bottom: 0.58rem;
         left: 42vw;
         display: inline;
         z-index: 9999999;
     }
 
     .banner{
-        width: 120vw; /* AANGEPASTA */
+        width: 120vw;
         justify-content: space-between;
     }
 
@@ -235,5 +249,21 @@ body{
         top: 1rem;
         right: 1rem;
         z-index: 100000;
+    }
+
+    #noResultsMessage,
+    #noFiltersSelected{
+        display: none;
+        font-size: 0.6rem;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 94.8vw;
+        max-width: 94.8vw;
+        word-wrap: break-word;
+        padding: 1rem;
+        box-sizing: border-box;
+        z-index: 99999;
     }
 }

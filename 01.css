@@ -3,7 +3,7 @@
 body{
     padding: 1.5vh;
     cursor: auto;
-    overflow: hidden;
+    
 }
 
 ::-webkit-scrollbar {
@@ -139,7 +139,7 @@ input{
     background: lightgrey;
     border: 0;
     appearance: none; -webkit-appearance: none; 
-    }
+}
 
 input:checked{
     box-shadow: inset 0 0 0 20px black;
@@ -297,16 +297,18 @@ svg circle.on {
 @media only screen and (max-width: 850px) {
     html, body {
         max-width: 100%;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
         padding: 0;
         margin: 0;
     }
+
 
     .title{
         font-size: 0.6rem;
         line-height: 0rem;
         top: auto;
-        bottom: 0.57rem;
+        bottom: 0.58rem;
         left: 42vw;
         display: inline;
         z-index: 9999999;
@@ -317,12 +319,13 @@ svg circle.on {
     }
 
     .navigation{
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       width: 80vw;
       max-width: 320px;
       height: 100%;
+      max-height: 100vh;;
 
       transform: translateX(-100%);
       transition: transform 0.35s ease;
@@ -331,15 +334,16 @@ svg circle.on {
       z-index: 3;
       padding: 1rem;
       padding-top: 4rem;
-    }
 
-    .navigation > div:last-of-type {
-        margin-bottom: 50%; /* AANGEPASTA */
     }
-
 
     .navigation.open{
         transform: translateX(0);
+    }
+
+    .extraSpace{
+        height: 10rem;
+        flex-shrink: 0;
     }
 
     #sidepanelBackground{
@@ -392,9 +396,8 @@ svg circle.on {
     }
 
     .svg{
-        position: relative;
+        position: fixed;
         width: 140vw;
-        overflow: hidden;  /* AANGEPASTA */
         top: -10vh;
         left: -5vw;
         fill: #ffffff;
@@ -403,7 +406,7 @@ svg circle.on {
 
     svg path.on,
     svg circle.on {
-        fill: lightgrey; /* ensure this applies */
+        fill: lightgrey;
     }
 
     svg path, svg circle {
