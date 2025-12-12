@@ -280,6 +280,7 @@ svg circle.on {
     top: 0.15rem;
     font-size: 1.4rem;
     line-height: 1;
+    cursor: pointer;
 }
 
 .iframe{
