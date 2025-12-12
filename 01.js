@@ -235,66 +235,61 @@ document.addEventListener("DOMContentLoaded", function() {
     // Toggle .on class directly on click
     if (input.checked) {
       el.classList.add('on');
-      var label = findLabelByPrefecture(prefId);
-      if (label) label.classList.add('on');
     } else {
       el.classList.remove('on');
-      var label = findLabelByPrefecture(prefId);
-      if (label) label.classList.remove('on');
     }
   });
 
   // Only add hover effect for desktop
   if (!('ontouchstart' in window)) {
+    // Only hover effect, independent of click
     el.addEventListener('mouseenter', function() {
-      var id = el.id;
-      var input = document.querySelector('.filter-controls input[data-state="' + id + '"]');
-      if (input && input.checked) return;
-      el.classList.add('hover');
-      var label = findLabelByPrefecture(id);
-      if (label) label.classList.add('hover');
+      var label = findLabelByPrefecture(el.id);
+      el.classList.add('hover');   // SVG light red
+      if (label) label.classList.add('hover'); // Label blue
     });
     el.addEventListener('mouseleave', function() {
-      var id = el.id;
-      var input = document.querySelector('.filter-controls input[data-state="' + id + '"]');
-      if (input && input.checked) return;
+      var label = findLabelByPrefecture(el.id);
       el.classList.remove('hover');
-      var label = findLabelByPrefecture(id);
       if (label) label.classList.remove('hover');
     });
+
   }
 });
 
-  // Hover prefecture OR region label -> svg (only when unchecked)
+  // Hover prefecture OR region label -> svg (only when unchecked) .ON = .HOVER GEWORDEN
   labelPrefectures.forEach(function(label) {
-    label.addEventListener('mouseenter', function() {
-      var input = label.querySelector('input[data-state]');
-      if (input && input.checked) return;
+  label.addEventListener('mouseenter', function() {
+    var input = label.querySelector('input[data-state]');
+    if (!input) return;
 
-      var prefIds = input ? input.getAttribute('data-state').trim().split(/\s+/) : [];
-
-      label.classList.add('on');
-
+    label.classList.add('hover');
+    
+    // only add hover to SVG if checkbox is not checked
+    if (!input.checked) {
+      var prefIds = input.getAttribute('data-state').trim().split(/\s+/);
       prefIds.forEach(function(id) {
         var svg = findSvgByPrefecture(id);
-        if (svg) svg.classList.add('on');
+        if (svg && !svg.classList.contains('on')) svg.classList.add('hover');
       });
-    });
+    }
+  });
 
-    label.addEventListener('mouseleave', function() {
-      var input = label.querySelector('input[data-state]');
-      if (input && input.checked) return;
+  label.addEventListener('mouseleave', function() {
+    var input = label.querySelector('input[data-state]');
+    if (!input) return;
 
-      var prefIds = input ? input.getAttribute('data-state').trim().split(/\s+/) : [];
+    // remove hover regardless of checkbox state
+    label.classList.remove('hover');
 
-      label.classList.remove('on');
-
-      prefIds.forEach(function(id) {
-        var svg = findSvgByPrefecture(id);
-        if (svg) svg.classList.remove('on');
-      });
+    var prefIds = input.getAttribute('data-state').trim().split(/\s+/);
+    prefIds.forEach(function(id) {
+      var svg = findSvgByPrefecture(id);
+      if (svg) svg.classList.remove('hover');
     });
   });
+});
+
 
   // Sync prefecture checkboxes -> prefecture highlights
   function updateSelectedPrefectures() {
@@ -309,8 +304,7 @@ document.addEventListener("DOMContentLoaded", function() {
     labelPrefectures.forEach(function(label) {
       var input = label.querySelector('input[name="prefecture"]');
       var id = input ? (input.getAttribute('data-state') || input.value || input.id || '').trim() : '';
-      if (id && selected.includes(id)) label.classList.add('on'); else label.classList.remove('on');
-    });
+     });
   }
 
   // Includes region deselect logic
@@ -372,12 +366,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Sync map/labels
     svgPrefectures.forEach(f => f.classList.remove('on'));
-    labelPrefectures.forEach(l => l.classList.remove('on'));
     [...selectedRegions, ...selectedPrefectures, ...selectedArchitects].forEach(function(id) {
         const feat = findSvgByPrefecture(id);
         if (feat) feat.classList.add('on');
-        const lab = findLabelByPrefecture(id);
-        if (lab) lab.classList.add('on');
     });
 
     const noFiltersMessage = document.getElementById('noFiltersSelected');
@@ -403,7 +394,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 }
 
-
   if (filterBtn) filterBtn.addEventListener("click", function(e) {
     //e.preventDefault();
     applyFilter();
@@ -423,7 +413,6 @@ document.addEventListener("DOMContentLoaded", function() {
       if (unknownCb) unknownCb.checked = false;
 
       svgPrefectures.forEach(svg => svg.classList.remove('on'));
-      labelPrefectures.forEach(label => label.classList.remove('on'));
       sessionStorage.removeItem('selectedRegions');
       sessionStorage.removeItem('selectedPrefectures');
       sessionStorage.removeItem('selectedArchitects');
@@ -449,7 +438,6 @@ document.addEventListener("DOMContentLoaded", function() {
       if (unknownCb) unknownCb.checked = false;
 
       svgPrefectures.forEach(svg => svg.classList.remove('on'));
-      labelPrefectures.forEach(label => label.classList.remove('on'));
 
       // Clear session storage filters
       sessionStorage.removeItem('selectedRegions');

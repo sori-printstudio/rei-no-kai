@@ -121,12 +121,9 @@ body{
     text-indent: -1.30rem;
 }
 
-.filter-controls label.on{
-    color: #808080;
-}
-
-.filter-controls label:hover{
+.filter-controls label.hover{
     cursor: pointer;
+    color: grey;
 }
 
 input{
@@ -163,12 +160,9 @@ input:checked{
     text-indent: -1.30rem;
 }
 
-.filter-controls-year label.on{
-    color: #808080;
-}
-
-.filter-controls-year label:hover{
+.filter-controls-year label.hover{
     cursor: pointer;
+    color: blue;
 }
 
 .yearrange {
@@ -250,13 +244,13 @@ input:checked{
 
 svg path.hover,
 svg circle.hover {
-    fill:  rgb(235, 235, 235);
+    fill:  rgb(255, 200, 200);
     cursor: pointer;
 }
 
 svg path.on,
 svg circle.on {
-    fill:  lightgrey;
+    fill:  red;
     cursor: pointer;
 }
 
