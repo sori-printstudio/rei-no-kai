@@ -109,6 +109,8 @@ body{
     width: 100%;
     padding: 0.55vw;
     box-sizing: border-box;
+    content-visibility: auto; /* Faster load HOPELIJK DOET DIT IETS!!! */
+    contain-intrinsic-size: 200px 300px; /* Faster load HOPELIJK DOET DIT IETS!!! */
 }
 
 .image img {

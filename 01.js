@@ -1,14 +1,42 @@
+// Faster load HOPELIJK DOET DIT IETS!!!
+const BATCH = 30;
+let index = 0;
+
+function loadMore() {
+    const container = document.querySelector('.imagegallery');
+    const slice = imagesData.slice(index, index + BATCH);
+
+    slice.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "image";
+        div.dataset.category = item.category;
+        div.dataset.url = item.url;
+
+        div.innerHTML = `
+            <img loading="lazy" src="${item.src}">
+            <div class="caption">
+                <div class="caption-title">${item.title}</div>
+                ${item.architect}<br>${item.info}
+            </div>
+        `;
+        container.appendChild(div);
+    });
+
+    index += BATCH;
+}
+
+window.addEventListener("scroll", () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 800)
+        loadMore();
+});
+
+
 // Toggle navigation OPEN / CLOSE on mobile
 function toggleNav(){
   document.getElementById("mySidepanel").classList.toggle('open');
   document.getElementById("sidepanelBackground").classList.toggle('open');
-
   var x = document.getElementById("openbtn");
-  if (x.innerHTML === "x") {
-    x.innerHTML = "&#9776;";
-  } else {
-    x.innerHTML = "x";
-  }
+  x.innerHTML = x.innerHTML === "x" ? "&#9776;" : "x";
 }
 
 // Toggle year range ON / OFF
@@ -580,9 +608,6 @@ document.addEventListener("DOMContentLoaded", function() {
           noFiltersMessage.style.display = 'none';
           noResultsMessage.style.display = 'none';
       }
-
-      
-
     }
   }
   
