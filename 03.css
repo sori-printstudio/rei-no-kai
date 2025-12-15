@@ -170,19 +170,17 @@ body{
     body > .leftside,
     body > .rightside {
         display: block;
-        width: 50%; /* AANGEPASTA */
+        width: 90%; /* AANGEPASTA */
     }
 
     .rightside { /* first */
         order: 0; 
         position: static;
-        /*width: 50vw; */  /* AANGEPASTA */
         margin-top: 0.5rem;
     }
 
     .leftside { /* second */
         order: 1; 
-        /* width: 50vw; */  /* AANGEPASTA */
         padding-bottom: 20%;
     }
 
