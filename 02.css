@@ -139,7 +139,7 @@ body{
 .popup {
     display: none;
     position: fixed;
-    z-index: 99999;
+    z-index: 9999999;
     left: 0;
     top: 0;
     width: 100%;
@@ -198,6 +198,12 @@ body{
 
     .caption{
         font-size: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .imagegallery {
+        grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
     }
 
     .title{
@@ -267,5 +273,17 @@ body{
         padding: 1rem;
         box-sizing: border-box;
         z-index: 99999;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .imagegallery {
+        grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    }
+
+    .iframe{
+        width: 95vw;
+        height: 90vh;
+        border: none;
     }
 }
