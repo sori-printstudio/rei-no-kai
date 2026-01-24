@@ -235,8 +235,8 @@ input:checked{
 .svg{
     position: fixed;
     top: 1vh;
-    width: 90vw;
-    left: -3rem;
+    width: 100vw;
+    left: -6rem;
     fill: #ffffff;
     stroke: black;
     z-index: 1;
@@ -289,6 +289,16 @@ svg circle.on {
     border: none;
 }
 
+/* Responsive SVG design for laptop/desktop with lower resolution */
+@media only screen and (max-width: 1200px) and (min-width: 851px) {
+    .svg {
+        width: 75vw;
+        top: -4rem;
+        left: 2rem;
+    }
+}
+
+/* Responsive design for tablets and phones */
 @media only screen and (max-width: 850px) {
     html, body {
         max-width: 100%;
@@ -427,6 +437,24 @@ svg circle.on {
     .iframe{
         width: 80vw;
         height: 81vh;
+        border: none;
+    }
+}
+
+/* Responsive SVG design for phones */
+@media only screen and (max-width: 500px) {
+    .svg{
+        position: fixed;
+        width: 130vw;
+        top: -10vh;
+        left: -1vw;
+        fill: #ffffff;
+        stroke: #000000;
+    }
+
+    .iframe{
+        width: 95vw;
+        height: 90vh;
         border: none;
     }
 }
