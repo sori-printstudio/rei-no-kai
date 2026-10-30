@@ -159,6 +159,21 @@ body{
     margin-top: 0.3rem;
 }
 
+.volume3{
+    font-family: "darkmode-mono-off", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 0.6rem;
+    background: #5EC8E5;
+    color: #000000;
+    border-radius: 10rem;
+    padding: 0.3rem;
+    padding-left: 0.33rem;
+    padding-right: 0.33rem;
+    display: inline-block;
+    margin-top: 0.3rem;
+}
+
 @media only screen and (max-width: 650px) {
     body {
         overflow-y: auto;
